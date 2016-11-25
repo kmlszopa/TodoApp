@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,11 +24,13 @@ public class TodoListFragment extends Fragment{
 
     private TodoItemAdapter mAdapter;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_todolist,container,false);
         ButterKnife.bind(this,view);
+        setHasOptionsMenu(true);
 
         mTodoList.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -37,5 +41,11 @@ public class TodoListFragment extends Fragment{
         mTodoList.setAdapter(mAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_list,menu);
     }
 }

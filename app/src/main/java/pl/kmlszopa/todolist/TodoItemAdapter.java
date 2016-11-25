@@ -39,9 +39,9 @@ public class TodoItemAdapter extends RecyclerView.Adapter<TodoItemAdapter.TodoVi
         TodoTask task = mData.get(position);
         //ustawienia paska priorytetu
         if (task.isPriority()){
-            holder.mStripe.setBackgroundColor(Color.RED);
+            holder.itemView.setBackgroundColor(0x20ff0000);
         }else{
-            holder.mStripe.setBackgroundColor(Color.TRANSPARENT);
+            holder.itemView.setBackgroundColor(Color.TRANSPARENT);
         }
         //Ustawiamy checkboxa done
         holder.mDone.setChecked(task.isDone());

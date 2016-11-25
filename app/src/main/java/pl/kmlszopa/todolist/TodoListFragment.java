@@ -29,6 +29,11 @@ public class TodoListFragment extends Fragment{
         ButterKnife.bind(this,view);
 
         mTodoList.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        TodoItemRepository itemsRepository = new SqlTodoItemsRepository(getContext());
+
+        mAdapter = new TodoItemAdapter();
+        mAdapter.setData(itemsRepository.getTodoList());
         mTodoList.setAdapter(mAdapter);
 
         return view;

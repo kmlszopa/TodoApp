@@ -63,7 +63,6 @@ public class TodoItemAdapter extends RecyclerView.Adapter<TodoItemAdapter.TodoVi
         @BindView(R.id.task_title)
         TextView mTitle;
 
-
         public TodoViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
